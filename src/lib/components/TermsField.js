@@ -4,7 +4,7 @@ import { Field, useFormikContext } from 'formik'
 
 import FieldError from './FieldError'
 import { useTranslation } from 'react-i18next'
-import { calculateMonthlyCost, formatNumber } from '../../utils'
+import { calculateMonthlyCost, formatNumber } from './utils'
 
 export const Term = ({ name, value }) => {
   const { t } = useTranslation()

@@ -1,6 +1,7 @@
 {
   "name": "fils-open-source-library",
-  "version": "0.1.0",
+  "version": "1.0.2",
+  "private": false,
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -9,16 +10,19 @@
   ],
   "repository": {
     "type": "git",
-    "url": "URL_OF_YOUR_REPOSITORY"
+    "url": "https://github.com/ArcMech/fils-open-source-library"
   },
+  "author": "arcmech",
+  "license": "MIT",
   "devDependencies": {
-    "babel-cli": "^6.26.0",
+    "@babel/cli": "^7.4.4",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/preset-react": "^7.9.4",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
     "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1"
+    "react-dom": "^16.13.1"
   },
   "peerDependencies": {
     "react": "^16.13.1",
@@ -26,19 +30,49 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build": "rm -rf dist && NODE_ENV=production babel src/lib --out-dir dist --copy-files --ignore __tests__,spec.js,test.js,__snapshots__",
+    "build": "set NODE_ENV=production && rm -rf dist && mkdir dist && npx babel src/components/AltaMap --out-dir dist --copy-files",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/lib -d dist --copy-files"
+    "publish:npm": "rm -rf dist && mkdir dist && babel src/lib -d dist --copy-files"
   },
   "dependencies": {
     "formik": "^2.1.4",
     "lodash": "^4.17.15",
     "moment": "^2.24.0",
+    "numeral": "^2.0.6",
     "react-datepicker": "^2.14.1",
     "react-i18next": "^11.3.5",
+    "react-scripts": "3.4.1",
     "react-text-mask": "^5.4.3",
     "reactstrap": "^8.4.1",
     "styled-components": "^5.1.0"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "babel": {
+    "presets": [
+      "@babel/react"
+    ],
+    "plugins": [
+      [
+        "@babel/plugin-proposal-class-properties",
+        {
+          "loose": true
+        }
+      ]
+    ]
   }
 }
