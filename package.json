@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "formik": "^2.1.4",
-    "lodash": "^4.17.15",
+    "lodash": "^4.17.21",
     "moment": "^2.24.0",
     "numeral": "^2.0.6",
     "react-datepicker": "^2.14.1",
